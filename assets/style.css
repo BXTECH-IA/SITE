@@ -1,0 +1,429 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    background: #000000;
+    line-height: 0.9;
+  }
+  
+  .container {
+    max-width: 1140px;
+    margin: auto;
+    padding: 0 15px;
+  }
+  
+  header {
+    background: #000000;
+    border-bottom: 1px solid #07fc27;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;         /* Evita que quebre o layout no mobile */
+    padding: 20px 0;
+  }
+  
+  .logo {
+    font-size: 45px;
+    font-weight: bold;
+  }
+
+  .logo1 {
+    font-size: 45px;
+    font-weight: bold;
+  }
+  
+  nav ul.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #fff4f4;
+    font-weight: 500;
+  }
+  
+  
+  /* Mobile Menu */
+  .menu-toggle {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+  }
+
+  /* Botão Inicio */
+.cta {
+  position: relative;
+  margin: auto;
+  padding: 12px 18px;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.cta span {
+  font-size: clamp(1.2rem, 1.5vw + 1rem, 2rem);
+}
+
+.cta:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 50px;
+  background: var(--color-destaque2);
+  width: 45px;
+  height: 45px;
+  transition: all 0.3s ease;
+}
+
+.cta span {
+  position: relative;
+  font-family: url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap') ;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #ffff;
+}
+
+.cta svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke:#239422;
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+
+.cta:hover:before {
+  width: 100%;
+  background: #6ccf67da;
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+  stroke: #07fc27;
+}
+
+.cta:active {
+  transform: scale(0.95);
+}
+
+  @media (max-width: 768px) {
+    nav ul.menu {
+      display: none;
+      flex-direction: column;
+      background: #ffffff;
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+  
+    nav ul.menu.active {
+      display: flex;
+    }
+  
+    .menu-toggle {
+      display: block;
+    }
+  }
+
+  /* Logo cabeçalho*/
+  .logo img {
+    height: 100px;          /* Mantém a altura das letras visível */
+    max-width: 400px;      /* Limita a largura total da imagem */
+    width: 100%;           /* Escala conforme o container */
+    object-fit: contain;
+    display: block;
+  }
+
+  /* Logo contato*/
+  .logo1 img {
+    height: 120px;          /* Mantém a altura das letras visível */
+    max-width: 900px;      /* Limita a largura total da imagem */
+    width: 100%;           /* Escala conforme o container */
+    object-fit: contain;
+    display: block;
+  }
+
+  /* Hero Section */
+  .hero {
+    background: #0414049a; /* fundo verde escuro */
+    padding: 60px 30px;
+    text-align: center;
+    border: 2px solid #318831b7; /* borda cinza */
+    border-radius: 20px; /* cantos arredondados */
+    max-width: 1200px; /* largura máxima */
+    margin: 30px auto; /* centraliza na tela */
+    box-shadow: 0 0 10px rgba(7, 252, 40, 0.505); /* leve brilho verde */
+  }
+
+  .hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .hero p {
+    font-size: 22px;
+    margin-bottom: 30px;
+  }
+  
+  /* Content Sections */
+  .content-section {
+    background: #0414049a;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .content-section h3 {
+    font-size: 58px;
+    margin-bottom: 20px;
+  }
+  
+  .content-section p {
+    color: #ffffff;
+    font-size: 22px; /* Um pouco maior */
+    text-align: center; /* Centraliza o parágrafo */
+  }
+  
+  /* Footer */
+  footer {
+    background: #000000;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+  }
+  .container a {
+    color: white;
+    text-decoration: none; /* opcional, para remover sublinhado */
+  }
+  
+  
+  /* Animations */
+  .animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+  }
+  
+  .animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Botões */
+
+  .bt1 {
+    background-color: transparent; /* ou uma cor leve, se preferir */
+    border: 1px solid rgba(173, 170, 170, 0.089);
+    font-weight: 600;
+    position: relative;
+    margin: auto;
+    transition: all 0.2s ease;
+    outline: none;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 35px;
+    width: 240px;
+    opacity: 1;
+  }
+
+  .bt2 {
+    background-color: transparent; /* ou uma cor leve, se preferir */
+    border: 1px solid rgba(173, 170, 170, 0.089);
+    font-weight: 600;
+    position: relative;
+    margin: auto;
+    transition: all 0.2s ease;
+    outline: none;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 35px;
+    width: 180px;
+    opacity: 1;
+  }
+
+  .bt3 {
+    background-color: transparent; /* ou uma cor leve, se preferir */
+    border: 1px solid rgba(173, 170, 170, 0.089);
+    font-weight: 600;
+    position: relative;
+    margin: auto;
+    transition: all 0.2s ease;
+    outline: none;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 35px;
+    width: 180px;
+    opacity: 1;
+  }
+
+  .bt4 {
+    background-color: transparent; /* ou uma cor leve, se preferir */
+    border: 1px solid rgba(173, 170, 170, 0.089);
+    font-weight: 600;
+    color: #8b8b8bce;
+    position: relative;
+    margin: auto;
+    transition: all 0.2s ease;
+    outline: none;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 35px;
+    width: 180px;
+    opacity: 1;
+  }
+  
+  /* Session Projects */
+  /* Projects Section */
+.projects {
+  padding: 2rem;
+  background: linear-gradient(90deg, #040504, #01f015);
+}
+
+.projects h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #fff;
+  font-size: 5rem; /* Aumenta o tamanho do h3 */
+}
+
+
+.projects-gallery {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.project-item {
+  padding: 3rem;
+  border: 2px solid #318831b7;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  background-color: #000000e7;
+  transition: transform 0.3s ease, box-shadow 0.5s ease;
+  flex-wrap: wrap; /* Para responsividade no mobile */
+}
+.project-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 4% 1% rgba(0, 0, 0, 0.1);
+}
+
+.project-image {
+  width: 50%;
+  max-width: 150%;
+  height: auto;
+  margin-top: 1%;
+  border-radius: 3%;
+}
+
+.project-item h4 {
+  font-size: 1.6rem; /* Aumenta o tamanho do h4 */
+  margin-bottom: 0.5rem;
+  text-align: center; /* Centraliza o título */
+}
+
+.project-item p {
+  color: #ffffff;
+  font-size: 1rem; /* Um pouco maior */
+  text-align: center; /* Centraliza o parágrafo */
+}
+
+
+/* Centraliza a div no meio da tela */
+.centered-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 2.5vh;
+  text-align: center;
+}
+
+.contato1  {
+  background: #0414049a; /* fundo verde escuro */
+  padding: 60px 30px;
+  text-align: center;
+  border: 2px solid #318831b7; /* borda cinza */
+  border-radius: 20px; /* cantos arredondados */
+  max-width: 750px; /* largura máxima */
+  margin: 30px auto; /* centraliza na tela */
+  box-shadow: rgba(70, 123, 73, 0.339) 0px 19px 38px, rgba(40, 86, 47, 0.22) 0px 15px 12px;
+}
+
+.contato1:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 4% 1% rgba(174, 169, 169, 0.1);
+}
+
+.projects2 {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+  
+
+/* Div Como Funciona */
+
+.container3 {
+  display: flex; /* ativa o flexbox */
+  gap: 20px; /* espaço entre as divs (opcional) */
+}
+
+.box {
+  background: #0000009a; /* fundo verde escuro */
+  padding: 60px 30px;
+  text-align: center;
+  border: 2px solid #318831b7; /* borda cinza */
+  border-radius: 20px; /* cantos arredondados */
+  max-width: 750px; /* largura máxima */
+  flex: 1; /* cada div ocupa metade do container */
+  box-shadow: rgba(70, 123, 73, 0.339) 0px 19px 38px, rgba(40, 86, 47, 0.22) 0px 15px 12px;
+}
+
+.box1 {
+  background: #0414049a; /* fundo verde escuro */
+  padding: 30px 10px;
+  text-align: center;
+  border: 2px solid #318831b7; /* borda cinza */
+  border-radius: 20px; /* cantos arredondados */
+  flex: 1; /* cada div ocupa metade do container */
+  max-width: 450px; /* largura máxima */
+  margin: 30px auto; /* centraliza na tela */
+}
+
