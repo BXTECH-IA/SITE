@@ -18,6 +18,7 @@
     max-width: 1140px;
     margin: auto;
     padding: 0 15px;
+    flex-wrap: wrap;         /* Evita que quebre o layout no mobile */
   }
   
   header {
@@ -438,10 +439,10 @@
 }
 
 .box {
-  background: #0000009a; /* fundo verde escuro */
+  background: #0000009a; /* fundo preto */
   padding: 60px 30px;
   text-align: center;
-  border: 2px solid #318831b7; /* borda cinza */
+  border: 2px solid #318831b7; /* borda verde claro */
   border-radius: 20px; /* cantos arredondados */
   max-width: 750px; /* largura máxima */
   flex: 1; /* cada div ocupa metade do container */
@@ -452,10 +453,55 @@
   background: #0414049a; /* fundo verde escuro */
   padding: 30px 10px;
   text-align: center;
-  border: 2px solid #318831b7; /* borda cinza */
+  border: 2px solid #318831b7; /* borda verde claro */
   border-radius: 20px; /* cantos arredondados */
   flex: 1; /* cada div ocupa metade do container */
   max-width: 450px; /* largura máxima */
   margin: 30px auto; /* centraliza na tela */
 }
 
+
+
+
+/* Ajustes responsivos adicionais */
+@media (max-width: 768px) {
+
+  /* Logo menor e alinhado no mobile */
+  .logo img {
+    height: 60px;
+    max-width: 200px;
+  }
+
+  .nav-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+  }
+
+  /* Container dos boxes (como funciona) */
+  .container3 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .box {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* Tamanho de textos */
+  .content-section h3 {
+    font-size: 32px;
+    line-height: 1.3;
+  }
+
+  .content-section p {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .projects-gallery {
+    grid-template-columns: 1fr;
+  }
+}
